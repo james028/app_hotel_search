@@ -1,0 +1,15 @@
+.flat-one {
+    width: 50%;
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+.flat-one:hover {
+    opacity: 0.8;
+    background-color: darkgray;
+}
+.flat-title {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}

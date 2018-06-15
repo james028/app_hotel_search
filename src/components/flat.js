@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import './flat.css'
 
 export default class Flat extends Component {
   render() {
+    const priceAndName = `${this.props.flat.price}${this.props.flat.priceCurrency} - ${this.props.flat.name}`;
+
+    const stlBack = {
+        width: '100%',
+        height: '85%',
+        backgroundImage: `url(${this.props.flat.imageUrl})`,
+        backgroundSize: 'cover'
+    }
+
     return (
-      <div>
-        <div className="flat-background">x</div>
+      <div className="flat-one">
+        <div style={stlBack}></div>
         <div className="flat-title">
-            <div className="flat-price">{this.props.flat.price}</div>
-            <div className="flat-name">{this.props.flat.name}</div>
+            {priceAndName}
         </div>
       </div>
     )
