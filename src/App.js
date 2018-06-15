@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      flat: []
+      flat: [],
+      selectFlat: null
     };
   }
 
@@ -21,25 +22,42 @@ class App extends Component {
       }))
   }
 
+  handleClick = (e) => {
+    this.setState({
+      selectFlat: e
+    });
+  }
+
+
   render() {
-    const { flat } = this.state;
-    const center = {
+    let center = {
       lat: 48.864716,
       lng: 2.349014
     };
-    const zoom = 11;
+    const zoom = 13;
+
+    if(this.state.selectFlat) {
+      center = {
+        lat: this.state.selectFlat.lat,
+        lng: this.state.selectFlat.lng
+      };
+    }
 
     return (
       <div className="flat-row">
         <div className="flat-col">
-          {flat.map((e,i) => {
-            return <Flat flat={e} key={i}/>
+          {this.state.flat.map((e,i) => {
+            return <Flat 
+            flat={e} 
+            key={i}
+            selectedFlated={this.handleClick}
+            />
           })}
         </div>
         <div className="flat-map">
         <div className="maps-google">
             <GoogleMapReact
-              defaultCenter={center}
+              center={center}
               defaultZoom={zoom}
             >
               {this.state.flat.map((k,l) => {
@@ -48,6 +66,7 @@ class App extends Component {
                     lat={k.lat}
                     lng={k.lng}
                     text={k.price}
+                    classSelected={k === this.state.selectFlat}
                   />
               })}
             </GoogleMapReact>
