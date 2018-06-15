@@ -37,16 +37,19 @@ class App extends Component {
           })}
         </div>
         <div className="flat-map">
-        <div style={{ height: '100vh', width: '100%' }}>
+        <div className="maps-google">
             <GoogleMapReact
               defaultCenter={center}
               defaultZoom={zoom}
             >
-              <Marker
-                lat={59.955413}
-                lng={30.337844}
-                text={'Kreyser Avrora'}
-              />
+              {this.state.flat.map((k,l) => {
+                  return <Marker 
+                    key={l}
+                    lat={k.lat}
+                    lng={k.lng}
+                    text={k.price}
+                  />
+              })}
             </GoogleMapReact>
           </div>
         </div>

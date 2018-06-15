@@ -14,7 +14,7 @@ export default class Flat extends Component {
 
     return (
       <div className="flat-one">
-        <div style={stlBack}></div>
+        <div className="flat-background" style={stlBack}></div>
         <div className="flat-title">
             {priceAndName}
         </div>

@@ -1,7 +1,6 @@
 :root {
   --bodyMaxWidth: 1240px;
 }
-
 .flat-row {
   display: flex;
   max-width: var(--bodyMaxWidth);
@@ -16,4 +15,19 @@
   flex-basis: 45%;
   height: 100vh;
   width: 100%;
+}
+.maps-google {
+  height: 100vh;
+  width: 100%;
+}
+
+
+@media (max-width: 600px) {
+  .flat-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .maps-google {
+    height: 70vh;
+  }
 }

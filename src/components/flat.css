@@ -13,3 +13,14 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+
+
+@media (max-width: 600px) {
+    .flat-one {
+        width: 100%;
+    }
+    .flat-background {
+        height: 250px !important;
+    }
+ }
