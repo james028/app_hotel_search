@@ -11,6 +11,7 @@
     font-size: 14px;
 }
 .marker-map.marker-place {
-    background-color: seagreen;
+    background-color: rgb(40, 36, 117);
+    color: #fff;
     font-weight: bold;
 }

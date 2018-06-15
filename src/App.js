@@ -22,9 +22,9 @@ class App extends Component {
       }))
   }
 
-  handleClick = (e) => {
+  handleClick = (a) => {
     this.setState({
-      selectFlat: e
+      selectFlat: a
     });
   }
 
@@ -36,6 +36,7 @@ class App extends Component {
     };
     const zoom = 13;
 
+
     if(this.state.selectFlat) {
       center = {
         lat: this.state.selectFlat.lat,
@@ -43,15 +44,18 @@ class App extends Component {
       };
     }
 
+
     return (
       <div className="flat-row">
         <div className="flat-col">
           {this.state.flat.map((e,i) => {
-            return <Flat 
-            flat={e} 
-            key={i}
-            selectedFlated={this.handleClick}
-            />
+            return (
+              <Flat
+              key={i}
+              flat={e}
+              selectedFlated={this.handleClick}
+              />
+            );
           })}
         </div>
         <div className="flat-map">
