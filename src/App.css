@@ -1,0 +1,20 @@
+:root {
+  --bodyMaxWidth: 1240px;
+}
+
+.flat-row {
+  display: flex;
+  max-width: var(--bodyMaxWidth);
+  margin: auto;
+  background-color: red;
+}
+.flat-col {
+  flex-basis: 55%;
+  background-color: green;
+}
+.flat-map {
+  flex-basis: 45%;
+  height: 100vh;
+  background-color: azure;
+  width: 100%;
+}
