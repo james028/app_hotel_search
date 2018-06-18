@@ -18,9 +18,9 @@
 
 @media (max-width: 600px) {
     .flat-one {
-        width: 100%;
+        width: 50%;
     }
     .flat-background {
-        height: 250px !important;
+        height: 100px !important;
     }
  }
